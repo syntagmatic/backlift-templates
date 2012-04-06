@@ -1,0 +1,24 @@
+
+<div class="tutorial">
+<h2>Introduction</h2>
+<p>This tutorial is meant to help anyone, beginner or expert, create websites with backbone.js using backlift. It's meant to be easy enough for a novice to follow. More experienced web developers may want to skim the example and note the call-out boxes on the right. These are backlift-specific details.</p>
+<p>Backbone.js is a very flexible library. Developers can build entire websites using backbone, or apply a few backbone techniques to speed up specific pages. Backlift, however, relies on backbone.js to provide the architecture of the website. As a result, backlift projects must be designed using a backbone router, backbone collections and models for persistence, and use a template system to provide the HTML content of the site.</p>
+<p>Backlift was built around the philosophy that <strong>you shouldn't have to do anything extra to deploy your backbone code on backlift</strong>. As a result, you can build a website with vanilla backbone.js, deploy it on backlift, and later move it to your own server without rewriting your code.</p>
+<div class="img-right"><img src="<%= url_root %>/app/images/layout.png"><br>The basic template layout</div>
+<p>This basic website serves as the main example for this tutorial. We suggest using a text editor like TextMate or Sublime Text to browse the root folder of this project, which was created by the <code>backlift create</code> command.</p>
+
+<h2>The contents of the basic template</h2>
+<p>The basic template includes two subfolders: app and libraries. The app folder contains everything specific to this website, including javascript files, templates, images and stylesheets. The libraries folder contains third party javascript and css libraries like backbone.js and Twitter Bootstrap.</p>
+<p>There is also the .backlift file which contains the project's configuration. One of the most important functions of the .backlift file is to specify the order by which javascript and css libraries are imported. A common pattern is to import backbone and bootstrap explicitly and then permit other scripts to be automatically discovered by backlift. You can learn more about configuring backlift in the configuration section.</p>
+
+<h2>The app's scripts</h2>
+<p>The main.js file contains the website's router. This is the code responsible for rendering the website's HTML depending on the URL used to access the page. There's also a views.js file which contains a generic PageView. The PageView is what determines  </p>
+<p>Backlift relies on the backbone router to organize the website. The router maps a set of URLs to a set of views. </p>
+
+<h2>Next steps</h2>
+<ul>
+  <li>Check out the <code>.backbone</code> file in the project's root folder. Here you can configure how your project is deployed, and the order in which files are linked.</li>
+  <li>Change your website's content by creating or modifying javascript template (.jst) files. These files are located in the <code>tempaltes</code> folder. If you add or delete .jst files, make sure to adjust the <code>pages</code> variable in the router's <code>initialize</code> method found in <code>views.js</code>.</li>
+  <li>Deploy your website with <code>backlift push</code></li>
+  <li>Explore other example apps. This is the basic app template. Other app templates can be downloaded with the <code>backlift startapp</code> command. Run <code>backlift --help</code> for a list.</li>
+</ul>
